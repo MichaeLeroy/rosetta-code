@@ -8,6 +8,10 @@ using Color, Images, FixedPointNumbers
 ima = imread("bitmap_histogram_in.jpg")
 imb = convert(Image{Gray{Ufixed8}}, ima)
 
+# calculate histogram
+a = map(x->x.val.i, imb.data)
+(nothing, h) = hist(reshape(a, length(a)), -1:typemax(Uint8))
+
 g = float(imb.data)
 b = g .> median(g)
 fill!(imb, Gray(0.0))
