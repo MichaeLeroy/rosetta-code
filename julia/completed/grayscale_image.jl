@@ -26,5 +26,5 @@ imwrite(imc, "grayscale_image_rc.png")
 
 ima = imread("grayscale_image_color.png")
 imb = convert(Image{Gray{Ufixed8}}, ima)
-imwrite(imc, "grayscale_image_julia.png")
+imwrite(imb, "grayscale_image_julia.png")
 
