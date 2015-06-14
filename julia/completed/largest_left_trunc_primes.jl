@@ -33,9 +33,8 @@ end
 lo, hi = 3, 17
 print("The largest left truncatable primes for bases")
 println(@sprintf " %d to %d." lo hi)
-for i in 1:5
-    print("  Base = ", i, "\n  ")
-    @ time mlt = lefttruncprime(12)
-    println(@sprintf "   %3d %d\n" i mlt)
+for i in lo:hi
+    mlt = lefttruncprime(i)
+    println(@sprintf "   %3d %d (%s)" i mlt base(i, mlt))
 end
 
